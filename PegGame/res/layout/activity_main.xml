@@ -1,0 +1,216 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/row0"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/icon_size"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout0"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" >
+	
+	        <ImageView
+	            android:id="@+id/peg00"
+	            android:layout_width="@dimen/icon_size"
+	            android:layout_height="@dimen/icon_size"
+	            android:src="@string/icon_path" />
+	        
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/row1"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/icon_size"
+        android:layout_below="@id/row0" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="@dimen/icon_sizex2"
+            android:layout_height="@dimen/icon_size"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:id="@+id/peg10"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@string/icon_path" />
+
+            <ImageView
+                android:id="@+id/peg11"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@string/icon_path" />
+            
+         </LinearLayout>
+
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/row2"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/icon_size"
+        android:layout_below="@id/row1" >
+        
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="@dimen/icon_sizex3"
+            android:layout_height="@dimen/icon_size"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:id="@+id/peg20"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@string/icon_path" />
+
+            <ImageView
+                android:id="@+id/peg21"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@string/icon_path" />
+            
+            <ImageView
+                android:id="@+id/peg22"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@string/icon_path" />
+            
+         </LinearLayout>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/row3"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/icon_size"
+        android:layout_below="@id/row2" >
+        
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="@dimen/icon_sizex4"
+            android:layout_height="@dimen/icon_size"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:id="@+id/peg30"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@string/icon_path" />
+
+            <ImageView
+                android:id="@+id/peg31"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@string/icon_path" />
+            
+            <ImageView
+                android:id="@+id/peg32"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@string/icon_path" />
+            
+            <ImageView
+                android:id="@+id/peg33"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@string/icon_path" />
+            
+         </LinearLayout>
+         
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/row4"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/icon_size"
+        android:layout_below="@id/row3" >
+                
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="@dimen/icon_sizex5"
+            android:layout_height="@dimen/icon_size"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:id="@+id/peg40"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@string/icon_path" />
+
+            <ImageView
+                android:id="@+id/peg41"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@string/icon_path" />
+            
+            <ImageView
+                android:id="@+id/peg42"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@string/icon_path" />
+            
+            <ImageView
+                android:id="@+id/peg43"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@string/icon_path" />
+            
+            <ImageView
+                android:id="@+id/peg44"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@string/icon_path" />
+            
+         </LinearLayout>
+        
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="nextMove"
+        android:text="@string/next" />
+
+    <Button
+        android:id="@+id/prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/next"
+        android:onClick="prevMove"
+        android:text="@string/prev" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:onClick="resetBoard"
+        android:text="@string/reset" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/row4"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>
