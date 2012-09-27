@@ -9,6 +9,6 @@
     <string name="messages_button">Run\nMessages</string>
     <string name="async_button">Run\nAsync</string>
     <string name="reset_button">Reset\nImage</string>
-    <string name="default_url">http://www.dre.vanderbilt.edu/~schmidt/ka.png</string>
+    <string name="default_url">http://boxinasuitcase.com/media/blogs/box/BSOD.jpg</string>
 
 </resources>

@@ -30,9 +30,16 @@ public class ThreadedDownloadActivity extends Activity {
     public String url;
     public Handler runnable_handler;
     public Handler message_handler;
-    public final int START_PROG_DIAG = 0;
-    public final int STOP_PROG_DIAG = 1;
-    public final int SET_IMAGE_VIEW = 2;
+    //Comment by Dr Schimdt:
+    //Please use Java enums instead of ints if you can.
+    //public final int START_PROG_DIAG = 0;
+    //public final int STOP_PROG_DIAG = 1;
+    //public final int SET_IMAGE_VIEW = 2;
+    public enum DownloadStatus {
+        START_PROG_DIAG,
+        STOP_PROG_DIAG,
+        SET_IMAGE_VIEW
+    }
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,8 +53,9 @@ public class ThreadedDownloadActivity extends Activity {
         default_drawable = res.getDrawable(R.drawable.default_img);
         runnable_handler = new Handler();
         message_handler = new Handler() {
+            DownloadStatus[] ds = DownloadStatus.values();
             public void handleMessage(Message msg) {
-                switch (msg.what) {
+                switch (ds[msg.what]) {
                     case START_PROG_DIAG: {
                         prog_diag = ProgressDialog.show(context, "Download", "Downloading via Message", true);
                         break; 
@@ -74,6 +82,7 @@ public class ThreadedDownloadActivity extends Activity {
     Bitmap downloadBitmap (String url) {
         try {
             InputStream is = (InputStream) new URL(url).getContent();
+            Log.d(getClass().getSimpleName(), "Download succeeded");
             return BitmapFactory.decodeStream(is);
         } catch (Exception e) {
             Log.d(getClass().getSimpleName(), "Download failed");
@@ -103,6 +112,7 @@ public class ThreadedDownloadActivity extends Activity {
         image_view.setImageDrawable(default_drawable);
     }
     
+    //Runnable class for use with the Runnables and Handlers model
     private class DownloadRunnable implements Runnable {
         @Override
         public void run() {
@@ -117,6 +127,7 @@ public class ThreadedDownloadActivity extends Activity {
         }
     }
     
+    //AsyncTask class for use with the AsyncTask model
     private class DownloadAsyncTask extends AsyncTask<String, Void, Bitmap> {
         @Override
         public void onPreExecute() {
@@ -139,15 +150,16 @@ public class ThreadedDownloadActivity extends Activity {
         }
     }
     
+    //Message class for use with the Messages and Handlers model
     private class DownloadMessage implements Runnable {
         @Override
         public void run() {
-            Message msg = message_handler.obtainMessage(START_PROG_DIAG);
+            Message msg = message_handler.obtainMessage(DownloadStatus.START_PROG_DIAG.ordinal());
             message_handler.sendMessage(msg);
             final Bitmap bm = downloadBitmap(url_box.getText().toString());
-            msg = message_handler.obtainMessage(SET_IMAGE_VIEW, bm);
+            msg = message_handler.obtainMessage(DownloadStatus.SET_IMAGE_VIEW.ordinal(), bm);
             message_handler.sendMessage(msg);
-            msg = message_handler.obtainMessage(STOP_PROG_DIAG);
+            msg = message_handler.obtainMessage(DownloadStatus.STOP_PROG_DIAG.ordinal());
             message_handler.sendMessage(msg);
         }
     }
