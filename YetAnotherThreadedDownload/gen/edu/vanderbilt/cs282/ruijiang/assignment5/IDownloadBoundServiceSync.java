@@ -42,12 +42,12 @@ case INTERFACE_TRANSACTION:
 reply.writeString(DESCRIPTOR);
 return true;
 }
-case TRANSACTION_getFileName:
+case TRANSACTION_downloadFileAndReturnFileName:
 {
 data.enforceInterface(DESCRIPTOR);
 java.lang.String _arg0;
 _arg0 = data.readString();
-java.lang.String _result = this.getFileName(_arg0);
+java.lang.String _result = this.downloadFileAndReturnFileName(_arg0);
 reply.writeNoException();
 reply.writeString(_result);
 return true;
@@ -70,7 +70,7 @@ public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public java.lang.String getFileName(java.lang.String url) throws android.os.RemoteException
+public java.lang.String downloadFileAndReturnFileName(java.lang.String url) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -78,7 +78,7 @@ java.lang.String _result;
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeString(url);
-mRemote.transact(Stub.TRANSACTION_getFileName, _data, _reply, 0);
+mRemote.transact(Stub.TRANSACTION_downloadFileAndReturnFileName, _data, _reply, 0);
 _reply.readException();
 _result = _reply.readString();
 }
@@ -89,7 +89,7 @@ _data.recycle();
 return _result;
 }
 }
-static final int TRANSACTION_getFileName = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
+static final int TRANSACTION_downloadFileAndReturnFileName = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
 }
-public java.lang.String getFileName(java.lang.String url) throws android.os.RemoteException;
+public java.lang.String downloadFileAndReturnFileName(java.lang.String url) throws android.os.RemoteException;
 }

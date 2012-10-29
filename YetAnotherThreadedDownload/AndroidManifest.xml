@@ -15,7 +15,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".ThreadedDownloadActivity"
-            android:label="@string/title_activity_threaded_download" >
+            android:label="@string/title_activity_threaded_download"
+            android:configChanges="orientation|screenSize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +24,7 @@
             </intent-filter>
         </activity>
         	<service android:name=".DownloadBoundServiceSync" android:process=":my_process"/>
-     		<service android:name=".DownloadBoundServiceASync" android:process=":my_process"/>
+     		<service android:name=".DownloadBoundServiceAsync" android:process=":my_process"/>
     </application>
 
 </manifest>

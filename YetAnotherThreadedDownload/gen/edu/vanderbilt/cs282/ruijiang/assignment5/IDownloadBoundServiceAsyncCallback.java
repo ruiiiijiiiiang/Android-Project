@@ -50,14 +50,6 @@ _arg0 = data.readString();
 this.onDownloadFinished(_arg0);
 return true;
 }
-case TRANSACTION_onError:
-{
-data.enforceInterface(DESCRIPTOR);
-java.lang.String _arg0;
-_arg0 = data.readString();
-this.onError(_arg0);
-return true;
-}
 }
 return super.onTransact(code, data, reply, flags);
 }
@@ -88,22 +80,8 @@ finally {
 _data.recycle();
 }
 }
-public void onError(java.lang.String error_message) throws android.os.RemoteException
-{
-android.os.Parcel _data = android.os.Parcel.obtain();
-try {
-_data.writeInterfaceToken(DESCRIPTOR);
-_data.writeString(error_message);
-mRemote.transact(Stub.TRANSACTION_onError, _data, null, android.os.IBinder.FLAG_ONEWAY);
-}
-finally {
-_data.recycle();
-}
-}
 }
 static final int TRANSACTION_onDownloadFinished = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
-static final int TRANSACTION_onError = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
 }
 public void onDownloadFinished(java.lang.String file_name) throws android.os.RemoteException;
-public void onError(java.lang.String error_message) throws android.os.RemoteException;
 }
